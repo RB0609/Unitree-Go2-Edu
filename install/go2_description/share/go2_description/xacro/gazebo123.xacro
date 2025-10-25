@@ -1,0 +1,555 @@
+<?xml version="1.0"?>
+<robot>
+    <!-- ros_control plugin -->
+   <!--gazebo>
+       <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="gz_ros2_control-system" >
+            <robot_param>robot_description</robot_param>
+   
+            <robot_sim_type>DefaultRobotHWSim</robot_sim_type>
+            <parameters>$(find go2_description)/config/robot_control.yaml</parameters>
+            <robot_param_node>robot_state_publisher</robot_param_node>
+            robot_param>robot_description</robot_param>
+       <robot_param_node>robot_state_publisher</robot_param_node>
+       
+       
+       </plugin>
+    </gazebo-->
+    
+
+
+
+    <gazebo>
+        <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+          <publish_link_pose>true</publish_link_pose>
+          <publish_sensor_pose>true</publish_sensor_pose>
+          <publish_collision_pose>false</publish_collision_pose>
+          <publish_visual_pose>false</publish_visual_pose>
+          <publish_nested_model_pose>false</publish_nested_model_pose>
+          <use_pose_vector_msg>true</use_pose_vector_msg>
+          <static_publisher>true</static_publisher>
+          <static_update_frequency>100</static_update_frequency>
+        </plugin>
+    </gazebo>
+    
+
+
+
+   
+    <gazebo>
+        <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+           <parameters>$(find go2_description)/config/robot_control.yaml</parameters>
+           <controller_manager_prefix_node_name>controller_manager</controller_manager_prefix_node_name>
+<!--           <robot_param_node>robot_state_publisher</robot_param_node> -->
+           <namespace>go2</namespace>
+        </plugin>
+    </gazebo>
+  
+     
+   
+ 
+   
+
+    
+  
+<!--THIS THE BASE CODE WORK WITH THIS IF NEW CODE SNIPPET IS FAILING-->
+<!--<gazebo>
+        <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+            <parameters>$(find go2_description)/config/robot_control.yaml</parameters>
+            <robot_param>robot_description</robot_param>
+            <robot_param_node>robot_state_publisher</robot_param_node>
+            <robot_sim_type>DefaultRobotHWSim</robot_sim_type>
+        </plugin>
+    </gazebo>  -->
+
+<!-- THE END -->
+
+
+
+
+
+    <!-- Show the trajectory of trunk center. -->
+    <!--gazebo>
+        <plugin name="3dplot" filename="libLinkPlot3DPlugin.so">
+            <frequency>10</frequency>
+            <plot>
+                <link>base</link>
+                <pose>0 0 0 0 0 0</pose>
+                <material>Gazebo/Yellow</material>
+            </plot>
+        </plugin>
+    </gazebo-->
+
+    <!-- Show the trajectory of foot. You can add another trajectory about another foot. -->
+     <!--gazebo>
+        <plugin name="3dplot" filename="libLinkPlot3DPlugin.so">
+            <frequency>100</frequency>
+            <plot>
+                <link>FL_foot</link>
+                <pose>0 0 0 0 0 0</pose>
+            </plot>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin filename="libgazebo_ros_force.so" name="gazebo_ros_force">
+            <bodyName>trunk</bodyName>
+            <topicName>/apply_force/trunk</topicName>
+        </plugin>
+    </gazebo-->
+    
+      <!-- IMU plugin -->
+    <gazebo reference="imu_link">
+        <sensor name="imu_sensor" type="imu">
+            <always_on>true</always_on>
+            <update_rate>100</update_rate>
+            <visualize>true</visualize>
+            <topic>imu</topic>
+            <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu">
+                <initial_orientation_as_reference>false</initial_orientation_as_reference>
+                <ros>
+                    <namespace>/go2</namespace>
+                    <remapping>~/out:=/go2/imu</remapping>
+                </ros>
+                <output_type>sensor_msgs/LaserScan</output_type>
+                <frame_name>radar</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+   
+    
+    <gazebo reference="radar">
+        <sensor name="lidar" type="gpu_lidar">
+           <always_on>true</always_on>
+           <visualize>true</visualize>
+           <update_rate>5</update_rate>
+           <ray>
+               <scan>
+                 <horizontal>
+                   <samples>360</samples>
+                   <resolution>1.000000</resolution>
+                   <min_angle>0.000000</min_angle>
+                   <max_angle>6.280000</max_angle>
+                 </horizontal>
+               </scan>
+               <range>
+                 <min>0.120000</min>
+                 <max>3.5</max>
+                 <resolution>0.015000</resolution>
+               </range>
+               <noise>
+                 <type>gaussian</type>
+                 <mean>0.0</mean>
+                 <stddev>0.01</stddev>
+               </noise>
+            </ray>
+            <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+                <render_engine>ogre2</render_engine>
+                <ros>
+                    <remapping>~/out:=scan</remapping>
+                </ros>
+                <output_type>sensor_msgs/LaserScan</output_type>
+                <frame_name>radar</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference ="head_upper">
+        <sensor name="wide_angle_camera" type="wideanglecamera">
+            <always_on>true</always_on>
+            <update_rate>30</update_rate>
+            <camera>
+                <horizontal_fov>2.0944</horizontal_fov>
+                <image>
+                    <format>R8G8B8</format>
+                    <width>1920</width>
+                    <height>1080</height>
+                </image>
+                <clip>
+                    <near>0.05</near>
+                    <far>10.0</far>
+                </clip>
+            </camera>
+            <plugin filename="ImageDisplay" name ="Image Display">
+                <gz-gui>
+                    <title>
+                        Wide Angle Camera
+                    </title>
+                    <property key="state" type="string">floating</property>
+                    <property key="width" type="double">350</property>
+                    <property key="height" type="double">315</property>
+                </gz-gui>
+                <topic>wide_angle_camera</topic>
+            </plugin>
+
+            <plugin filename="MinimalScene" name="3D View">
+                <gz-gui>
+                    <title>3D View</title>
+                    <property type="bool" key="showTitleBar">false</property>
+                    <property type="string" key="state">docked</property>
+                </gz-gui>
+                <engine>ogre2</engine>
+                <scene>scene</scene>
+            </plugin>
+      
+           
+    
+        
+        </sensor>
+    </gazebo>
+
+   <!--ros2_control name="Go2System" type="hardware_interface/DefaultSystem">
+        <hardware>
+            <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+        </hardware>
+
+        <joint name ="FL_hip_joint" >
+            <command_interface name ="position" />
+            <state_interface name ="position" />
+            <state_interface name ="velocity" />
+        </joint>
+
+        <joint name ="FL_thigh_joint" >
+            <command_interface name ="position" />
+            <state_interface name ="position" />
+            <state_interface name ="velocity" />
+        </joint>
+
+        <joint name ="FL_calf_joint" >
+            <command_interface name ="position" />
+            <state_interface name ="position" />
+            <state_interface name ="velocity" />
+        </joint>
+
+        <joint name ="FR_hip_joint" >
+            <command_interface name ="position" />
+            <state_interface name ="position" />
+            <state_interface name ="velocity" />
+        </joint>
+
+        <joint name ="FR_thigh_joint" >
+            <command_interface name ="position" />
+            <state_interface name ="position" />
+            <state_interface name ="velocity" />
+        </joint>
+
+        <joint name ="FR_calf_joint" >
+            <command_interface name ="position" />
+            <state_interface name ="position" />
+            <state_interface name ="velocity" />
+        </joint>
+
+        <joint name ="RL_hip_joint" >
+            <command_interface name ="position" />
+            <state_interface name ="position" />
+            <state_interface name ="velocity" />
+        </joint>
+
+        <joint name ="RL_thigh_joint" >
+            <command_interface name ="position" />
+            <state_interface name ="position" />
+            <state_interface name ="velocity" />
+        </joint>
+
+        <joint name ="RL_calf_joint" >
+            <command_interface name ="position" />
+            <state_interface name ="position" />
+            <state_interface name ="velocity" />
+        </joint>
+
+        <joint name ="RR_hip_joint" >
+            <command_interface name ="position" />
+            <state_interface name ="position" />
+            <state_interface name ="velocity" />
+        </joint>
+
+        <joint name ="RR_thigh_joint" >
+            <command_interface name ="position" />
+            <state_interface name ="position" />
+            <state_interface name ="velocity" />
+        </joint>
+
+        <joint name ="RR_calf_joint" >
+            <command_interface name ="position" />
+            <state_interface name ="position" />
+            <state_interface name ="velocity" />
+        </joint>
+    </ros2_control-->
+
+
+   
+
+
+
+
+
+
+
+
+    <!-- Foot contacts. -->
+    <!--gazebo reference="FR_calf">
+        <sensor name="FR_foot_contact" type="contact">
+        <update_rate>100</update_rate>
+        <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
+        <contact>
+            <collision>FR_foot_collision</collision>
+        </contact>
+        </sensor>
+    </gazebo>
+    <gazebo reference="FL_calf">
+        <sensor name="FL_foot_contact" type="contact">
+        <update_rate>100</update_rate>
+        <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
+        <contact>
+            <collision>FL_calf_fixed_joint_lump__FL_foot_collision_1</collision>
+        </contact>
+        </sensor>
+    </gazebo>
+    <gazebo reference="RR_calf">
+        <sensor name="RR_foot_contact" type="contact">
+        <update_rate>100</update_rate>
+        <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
+        <contact>
+            <collision>RR_calf_fixed_joint_lump__RR_foot_collision_1</collision>
+        </contact>
+        </sensor>
+    </gazebo>
+    <gazebo reference="RL_calf">
+        <sensor name="RL_foot_contact" type="contact">
+        <update_rate>100</update_rate>
+        <plugin name="contactPlugin" filename="libunitreeFootContactPlugin.so"/>
+        <contact>
+            <collision>RL_calf_fixed_joint_lump__RL_foot_collision_1</collision>
+        </contact>
+        </sensor>
+    </gazebo>
+
+  
+    <gazebo reference="FR_foot">
+        <visual>
+            <plugin name="drawForcePlugin" filename="libunitreeDrawForcePlugin.so">
+                <topicName>FR_foot_contact</topicName>
+            </plugin>
+        </visual>
+    </gazebo>
+    <gazebo reference="FL_foot">
+        <visual>
+            <plugin name="drawForcePlugin" filename="libunitreeDrawForcePlugin.so">
+                <topicName>FL_foot_contact</topicName>
+            </plugin>
+        </visual>
+    </gazebo>
+    <gazebo reference="RR_foot">
+        <visual>
+            <plugin name="drawForcePlugin" filename="libunitreeDrawForcePlugin.so">
+                <topicName>RR_foot_contact</topicName>
+            </plugin>
+        </visual>
+    </gazebo>
+    <gazebo reference="RL_foot">
+        <visual>
+            <plugin name="drawForcePlugin" filename="libunitreeDrawForcePlugin.so">
+                <topicName>RL_foot_contact</topicName>
+            </plugin>
+        </visual>
+    gazebo-->
+
+       <!-- Foot contact sensors for Unitree Go2 -->
+        <!--gazebo reference="FR_foot">
+            <sensor name="FR_foot_contact" type="contact">
+            
+                <plugin name="gz::sim::systems::Ros2Contact" filename="gz-sim-ros2-contact-system"/>
+                <contact>
+                    <collision>FR_foot_collision</collision>
+                </contact>
+            </sensor>
+        </gazebo>
+        
+        <gazebo reference="FL_foot">
+            <sensor name="FL_foot_contact" type="contact">
+            
+                <plugin name="gz::sim::systems::Ros2Contact" filename="gz-sim-ros2-contact-system"/>
+                <contact>
+                    <collision>FL_foot_collision</collision>
+                </contact>
+                <ros>
+                    <namespace>/go2</namespace>
+                    <topic>FL_foot_contact</topic>
+                </ros>
+            </sensor>
+
+        </gazebo>
+        
+        <gazebo reference="RR_foot">
+            <sensor name="RR_foot_contact" type="contact">
+     
+                <plugin name="gz::sim::systems::Ros2Contact" filename="gz-sim-ros2-contact-system"/>
+                <contact>
+                    <collision>RR_foot_collision</collision>
+                </contact>
+                <ros>
+                    <namespace>/go2</namespace>
+                    <topic>RR_foot_contact</topic>
+                </ros>
+            </sensor>
+        </gazebo>
+        
+        
+        <gazebo reference="RL_foot">
+            <sensor name="RL_foot_contact" type="contact">
+     
+                <plugin name="gz::sim::systems::Ros2Contact" filename="gz-sim-ros2-contact-system"/>
+                <contact>
+                    <collision>RL_foot_collision</collision>
+                </contact>
+                <ros>
+                    <namespace>/go2</namespace>
+                    <topic>RL_foot_contact</topic>
+                </ros>
+            </sensor>
+        </gazebo-->
+
+        
+
+
+    <gazebo reference="base">
+         <gravity>true</gravity>
+    </gazebo>
+
+    <gazebo reference="trunk">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+
+    <gazebo reference="stick_link">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+
+    <gazebo reference="imu_link">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+
+    <!-- FL leg -->
+    <gazebo reference="FL_hip">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+
+    </gazebo>
+    <gazebo reference="FL_thigh">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>1</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+    <gazebo reference="FL_calf">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>1</self_collide>
+    </gazebo>
+    <gazebo reference="FL_foot">
+        <gravity>true</gravity>
+        <mu1>0.6</mu1>
+        <mu2>0.6</mu2>
+        <self_collide>1</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+
+    <!-- FR leg -->
+    <gazebo reference="FR_hip">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+    <gazebo reference="FR_thigh">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>1</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+    <gazebo reference="FR_calf">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>1</self_collide>
+    </gazebo>
+    <gazebo reference="FR_foot">
+        <gravity>true</gravity>
+        <mu1>0.6</mu1>
+        <mu2>0.6</mu2>
+        <self_collide>1</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+
+    <!-- RL leg -->
+    <gazebo reference="RL_hip">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+    <gazebo reference="RL_thigh">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>1</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+    <gazebo reference="RL_calf">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>1</self_collide>
+    </gazebo>
+    <gazebo reference="RL_foot">
+        <gravity>true</gravity>
+        <mu1>0.6</mu1>
+        <mu2>0.6</mu2>
+        <self_collide>1</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+
+    <!-- RR leg -->
+    <gazebo reference="RR_hip">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+    </gazebo>
+    <gazebo reference="RR_thigh">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>1</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+    <gazebo reference="RR_calf">
+        <gravity>true</gravity>
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <self_collide>1</self_collide>
+    </gazebo>
+    <gazebo reference="RR_foot">
+        <gravity>true</gravity>
+        <mu1>0.6</mu1>
+        <mu2>0.6</mu2>
+        <self_collide>1</self_collide>
+        <kp  value="1000000.0"/>
+        <kd  value="1.0"/>
+    </gazebo>
+
+</robot>

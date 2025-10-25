@@ -1,0 +1,60 @@
+<launch>
+    <!-- Variables -->
+    <let name="urdf_path" value="$(find-pkg-share go2_description)/xacro/robot.xacro"/>
+    <let name="rviz_config_path" value="$(find-pkg-share go2_description)/rviz/go2_new.rviz"/>
+    <let name="control_config" value="$(find-pkg-share go2_description)/config/robot_control.yaml"/>
+    <let name ="gazebo_config_path" value="$(find-pkg-share go2_description)/config/gazebo_bridge.yaml"/>
+    <!-- Robot State Publisher -->
+    
+
+
+
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+       
+        <arg name="gz_args" value="empty.sdf -r"/>
+    </include>
+
+    <node pkg="robot_state_publisher" exec="robot_state_publisher" output="screen">
+        <param name="robot_description" value="$(command 'xacro $(var urdf_path)')"/>
+    </node>
+
+    <!-- ros2_control controller manager -->
+
+<!--<node pkg="controller_manager" exec="ros2_control_node" output="both">
+        <param from ="$(var control_config)"/>
+        <remap from="robot_description" to="/go2/robot_description"/>
+    </node>  -->
+
+  
+   
+    <node pkg="controller_manager" exec="spawner" output ="screen" args="joint_state_broadcaster --controller-manager /controller_manager"/>
+    <node pkg="controller_manager" exec="spawner" output ="screen" args="joint_group_position_controller --controller-manager /controller_manager"/> 
+
+    
+
+
+
+    <!-- Spawn robot in Gazebo -->
+    <node pkg="ros_gz_sim" exec="create" output="screen" >
+        <param name="use_sim_time" value="true"/>
+        <param name="name" value="go2"/>
+        <param name="topic" value="robot_description"/>
+        <param name="x" value="0.0"/>
+        <param name="y" value="0.0"/>
+        <param name="z" value="0.375"/> <!-- Adjust so robot stands on plane -->
+        <param name="roll" value="0.0"/>
+        <param name="pitch" value="0.0"/>
+        <param name="yaw" value="0.0"/>
+    </node>
+
+  
+    <node pkg="ros_gz_bridge" exec="parameter_bridge">
+        <param name="config_file" value="$(var gazebo_config_path)"/>
+    </node>
+
+    <!-- Joint State Publisher GUI -->
+    <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui" output="screen"/>
+
+    <!-- RViz (optional) -->
+    <!--node pkg="rviz2" exec="rviz2" args="-d $(var rviz_config_path)" -->
+</launch>

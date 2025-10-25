@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<robot name="sensor_d435" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Materials -->
+  <xacro:include filename="$(find go2_description)/urdf/materials.urdf.xacro" />
+  
+  
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="base"/>
+    <child link="camera_bottom_screw_frame"/>
+  </joint>
+
+  <link name="camera_bottom_screw_frame"/>
+
+  <joint name="camera_link_joint" type="fixed">
+    <origin xyz="0.010 -0.0175 0.0125" rpy="0 0 0"/>
+    <parent link="camera_bottom_screw_frame"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <link name="camera_link">
+    <visual>
+      <origin xyz="0.0043 0.0175 0" rpy="1.5708 0 1.5708"/>
+      <geometry>
+        <mesh filename="$(find go2_description)/meshes/d435.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.0175 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.02505 0.09 0.025"/>
+      </geometry>
+      <material name ="aluminum"/>
+    </collision>
+    <inertial>
+      <mass value="0.072"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.003881243" ixy="0.0" ixz="0.0"
+               iyy="0.000498940" iyz="0.0" izz="0.003879257"/>
+    </inertial>
+  </link>
+
+  <!-- Depth frame -->
+  <joint name="camera_depth_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="camera_link"/>
+    <child link="camera_depth_frame"/>
+  </joint>
+  <link name="camera_depth_frame"/>
+
+  <joint name="camera_depth_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+    <parent link="camera_depth_frame"/>
+    <child link="camera_depth_optical_frame"/>
+  </joint>
+  <link name="camera_depth_optical_frame"/>
+
+  <!-- Infrared 1 -->
+  <joint name="camera_infra1_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="camera_link"/>
+    <child link="camera_infra1_frame"/>
+  </joint>
+  <link name="camera_infra1_frame"/>
+
+  <joint name="camera_infra1_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+    <parent link="camera_infra1_frame"/>
+    <child link="camera_infra1_optical_frame"/>
+  </joint>
+  <link name="camera_infra1_optical_frame"/>
+
+  <!-- Infrared 2 -->
+  <joint name="camera_infra2_joint" type="fixed">
+    <origin xyz="0 -0.05 0" rpy="0 0 0"/>
+    <parent link="camera_link"/>
+    <child link="camera_infra2_frame"/>
+  </joint>
+  <link name="camera_infra2_frame"/>
+
+  <joint name="camera_infra2_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+    <parent link="camera_infra2_frame"/>
+    <child link="camera_infra2_optical_frame"/>
+  </joint>
+  <link name="camera_infra2_optical_frame"/>
+
+  <!-- Color -->
+  <joint name="camera_color_joint" type="fixed">
+    <origin xyz="0 0.015 0" rpy="0 0 0"/>
+    <parent link="camera_link"/>
+    <child link="camera_color_frame"/>
+  </joint>
+  <link name="camera_color_frame"/>
+
+  <joint name="camera_color_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+    <parent link="camera_color_frame"/>
+    <child link="camera_color_optical_frame"/>
+  </joint>
+  <link name="camera_color_optical_frame"/>
+
+</robot>

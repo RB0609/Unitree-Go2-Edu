@@ -1,0 +1,106 @@
+- ros_topic_name: "/clock"
+  gz_topic_name: "/clock"
+  ros_type_name: "rosgraph_msgs/msg/Clock"
+  gz_type_name: "gz.msgs.Clock"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "/scan"
+  gz_topic_name: "/scan"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
+ 
+- ros_topic_name: "camera/camera_info"
+  gz_topic_name: "camera/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "/scan/points"
+  gz_topic_name: "/scan/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "joint_states"
+  gz_topic_name: "joint_states"
+  ros_type_name: "sensor_msgs/msg/JointState"
+  gz_type_name: "gz.msgs.Model"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "tf"
+  gz_topic_name: "tf"
+  ros_type_name: "tf2_msgs/msg/TFMessage"
+  gz_type_name: "gz.msgs.Pose_V"
+  direction: GZ_TO_ROS
+
+
+# RGB Image
+- ros_topic_name: /go2/camera/image_raw
+  gz_topic_name: /world/empty/model/go2/link/base/sensor/realsense_d435i/depth_image
+  ros_type_name: sensor_msgs/msg/Image
+  gz_type_name: gz.msgs.Image
+  direction: GZ_TO_ROS
+
+# Camera Info (optional)
+- ros_topic_name: /go2/camera/camera_info
+  gz_topic_name: /wide_angle_camera/camera_info
+  ros_type_name: sensor_msgs/msg/CameraInfo
+  gz_type_name: gz.msgs.CameraInfo
+  direction: GZ_TO_ROS
+
+
+- ros_topic_name: /joint_group_position_controller/joint_trajectory
+  gz_topic_name: /joint_group_position_controller/joint_trajectory
+  ros_type_name: trajectory_msgs/msg/JointTrajectory
+  gz_type_name: gz.msgs.JointTrajectory
+  direction: GZ_TO_ROS
+
+
+#- ros_topic_name: "/go2/lidar_points"
+#  gz_topic_name: "/lidar_l1/out"
+#  ros_type_name: "sensor_msgs/msg/PointCloud2"
+#  gz_type_name: "gz.msgs.PointCloudPacked"
+#  direction: GZ_TO_ROS
+
+
+- ros_topic_name: "/go2/velodyne_points"
+  gz_topic_name: "/world/empty/model/go2/link/base/sensor/velodyne_vlp16/scan/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+
+
+# ROS 2 Jazzy + Gazebo Harmonic contact sensor bridges for Unitree Go2
+
+#- ros_topic_name: "/go2/FR_foot_contact"
+#  gz_topic_name: "/world/default/model/go2/link/FR_foot/sensor/FR_foot_contact/contacts"
+#  ros_type_name: "gz_msgs/msg/Contacts"
+#  gz_type_name: "gz.msgs.Contacts"
+#  direction: GZ_TO_ROS
+
+#- ros_topic_name: "/go2/FL_foot_contact"
+#  gz_topic_name: "/world/default/model/go2/link/FL_foot/sensor/FL_foot_contact/contacts"
+#  ros_type_name: "gz_msgs/msg/Contacts"
+#  gz_type_name: "gz.msgs.Contacts"
+#  direction: GZ_TO_ROS
+
+#- ros_topic_name: "/go2/RR_foot_contact"
+#  gz_topic_name: "/world/default/model/go2/link/RR_foot/sensor/RR_foot_contact/contacts"
+#  ros_type_name: "gz_msgs/msg/Contacts"
+#  gz_type_name: "gz.msgs.Contacts"
+#  direction: GZ_TO_ROS
+
+#- ros_topic_name: "/go2/RL_foot_contact"
+#  gz_topic_name: "/world/default/model/go2/link/RL_foot/sensor/RL_foot_contact/contacts"
+#  ros_type_name: "gz_msgs/msg/Contacts"
+#  gz_type_name: "gz.msgs.Contacts"
+#  direction: GZ_TO_ROS
+
+
+
+  # ===========================================
+# Gazebo ↔ ROS 2 Bridge for Contact Sensors
+# Compatible with Gazebo Harmonic + ROS 2 Jazzy
+# ===========================================
+

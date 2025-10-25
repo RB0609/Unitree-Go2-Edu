@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot name="go2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:arg name="DEBUG" default="false"/>
+    <xacro:include filename="$(find go2_description)/urdf/test.urdf.xacro"/>  
+    <xacro:include filename="$(find go2_description)/xacro/const.xacro"/>
+    <xacro:include filename="$(find go2_description)/xacro/materials.xacro"/>
+    <xacro:include filename="$(find go2_description)/xacro/leg.xacro"/>
+    <xacro:include filename="$(find go2_description)/xacro/transmission.xacro" />
+<!--<xacro:include filename="$(find go2_description)/xacro/robot.xacro" /> -->
+    <xacro:include filename="$(find go2_description)/xacro/gazebo123.xacro" />   
+</robot>

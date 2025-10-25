@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <model name="d435_test">
+    <link name="camera">
+      <visual name="mesh">
+        <geometry>
+          <mesh><uri>model://d435.dae</uri></mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

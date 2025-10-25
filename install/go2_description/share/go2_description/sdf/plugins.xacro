@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <world name="default">
+ 
+    <plugin name="gz::sim::systems::Physics" filename="gz-sim-physics-system"/>
+    <plugin name="gz::sim::systems::SceneBroadcaster" filename="gz-sim-scene-broadcaster-system"/>
+    <plugin name="gz::sim::systems::Rendering" filename="gz-sim-rendering-system"/>
+    <plugin name="gz::sim::systems::Sensors" filename="gz-sim-sensors-system"/>
+
+  </world>
+</sdf>

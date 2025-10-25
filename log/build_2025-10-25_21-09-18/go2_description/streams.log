@@ -1,0 +1,130 @@
+[0.037s] Invoking command in '/home/rakesh/go2_ws/build/go2_description': AMENT_PREFIX_PATH=/home/rakesh/go2_ws/install/realsense2_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rakesh/go2_ws/install/realsense2_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy: DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/rakesh/go2_ws/src/go2_description -DCMAKE_INSTALL_PREFIX=/home/rakesh/go2_ws/install/go2_description
+[0.132s] -- The C compiler identification is GNU 13.3.0
+[0.223s] -- The CXX compiler identification is GNU 13.3.0
+[0.250s] -- Detecting C compiler ABI info
+[0.413s] -- Detecting C compiler ABI info - done
+[0.426s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.427s] -- Detecting C compile features
+[0.427s] -- Detecting C compile features - done
+[0.445s] -- Detecting CXX compiler ABI info
+[0.633s] -- Detecting CXX compiler ABI info - done
+[0.647s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.648s] -- Detecting CXX compile features
+[0.648s] -- Detecting CXX compile features - done
+[0.656s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.916s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.149s] -- Found realsense2_description: 4.56.4 (/home/rakesh/go2_ws/install/realsense2_description/share/realsense2_description/cmake)
+[1.155s] -- Found xacro: 2.1.1 (/opt/ros/jazzy/share/xacro/cmake)
+[1.292s] -- Configuring done (1.2s)
+[1.297s] -- Generating done (0.0s)
+[1.301s] -- Build files have been written to: /home/rakesh/go2_ws/build/go2_description
+[1.312s] Invoked command in '/home/rakesh/go2_ws/build/go2_description' returned '0': AMENT_PREFIX_PATH=/home/rakesh/go2_ws/install/realsense2_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rakesh/go2_ws/install/realsense2_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy: DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/rakesh/go2_ws/src/go2_description -DCMAKE_INSTALL_PREFIX=/home/rakesh/go2_ws/install/go2_description
+[1.314s] Invoking command in '/home/rakesh/go2_ws/build/go2_description': AMENT_PREFIX_PATH=/home/rakesh/go2_ws/install/realsense2_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rakesh/go2_ws/install/realsense2_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy: DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rakesh/go2_ws/build/go2_description -- -j12 -l12
+[1.389s] Invoked command in '/home/rakesh/go2_ws/build/go2_description' returned '0': AMENT_PREFIX_PATH=/home/rakesh/go2_ws/install/realsense2_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rakesh/go2_ws/install/realsense2_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy: DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/rakesh/go2_ws/build/go2_description -- -j12 -l12
+[1.391s] Invoking command in '/home/rakesh/go2_ws/build/go2_description': AMENT_PREFIX_PATH=/home/rakesh/go2_ws/install/realsense2_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rakesh/go2_ws/install/realsense2_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy: DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/rakesh/go2_ws/build/go2_description
+[1.407s] -- Install configuration: ""
+[1.407s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf
+[1.407s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/go2_description.urdf.xacro
+[1.408s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/testing.urdf.xacro
+[1.409s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/Normal_collision_model.png
+[1.410s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/materials.urdf.xacro
+[1.410s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/Amended_collision_model.png
+[1.411s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history
+[1.411s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905112749.urdf
+[1.412s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905113755.urdf
+[1.412s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230904193705.urdf
+[1.413s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905113840.urdf
+[1.413s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230904193644.urdf
+[1.414s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905113839.urdf
+[1.414s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905112047.urdf
+[1.415s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230904182446.urdf
+[1.415s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905112217.urdf
+[1.415s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905113754.urdf
+[1.416s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905112735.urdf
+[1.416s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905112143.urdf
+[1.417s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230904193711.urdf
+[1.417s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905115313.urdf
+[1.418s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905114759.urdf
+[1.418s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230904144240.urdf
+[1.419s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905113000.urdf
+[1.419s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905114819.urdf
+[1.420s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230904193710.urdf
+[1.420s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905115022.urdf
+[1.421s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905115300.urdf
+[1.421s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230904193628.urdf
+[1.422s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230904193653.urdf
+[1.423s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905112752.urdf
+[1.423s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905115215.urdf
+[1.424s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905113059.urdf
+[1.424s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905112944.urdf
+[1.425s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905115021.urdf
+[1.425s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905113633.urdf
+[1.426s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905115040.urdf
+[1.427s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/.history/go2_description_20230905115226.urdf
+[1.427s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/test.urdf.xacro
+[1.428s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/test2.urdf.xacro
+[1.428s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//urdf/d435.urdf.xacro
+[1.428s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//launch
+[1.429s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//launch/rviz.launch
+[1.429s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//launch/check_joint.rviz
+[1.429s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//launch/go2_rviz.launch
+[1.430s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//launch/gazebo.launch
+[1.430s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//xacro
+[1.430s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//xacro/lidar.xacro
+[1.431s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//xacro/camera.xacro
+[1.431s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//xacro/materials.xacro
+[1.431s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//xacro/robot.xacro
+[1.432s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//xacro/const.xacro
+[1.432s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//xacro/transmission.xacro
+[1.433s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//xacro/velodyne.xacro
+[1.433s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//xacro/leg.xacro
+[1.434s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//xacro/gazebo123.xacro
+[1.434s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//rviz
+[1.434s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//rviz/go2_new.rviz
+[1.435s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//config
+[1.435s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//config/joint_names_go2_description.yaml
+[1.435s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//config/control1.yaml
+[1.436s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//config/gazebo_bridge.yaml
+[1.436s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//config/robot_control.yaml
+[1.436s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//model
+[1.437s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//model/foot.dae
+[1.439s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//model/thigh_mirror.dae
+[1.447s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//model/base.dae
+[1.472s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//model/hip.dae
+[1.485s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//model/calf.dae
+[1.488s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//model/calf_mirror.dae
+[1.491s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//model/thigh.dae
+[1.501s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes
+[1.501s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes/trunk.dae
+[1.541s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes/foot.dae
+[1.545s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes/L1_4D_Lidar.dae
+[1.582s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes/thigh_mirror.dae
+[1.631s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes/base.dae
+[1.667s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes/VLP16_base_1.dae
+[1.668s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes/hip.dae
+[1.680s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes/calf.dae
+[1.683s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes/calf_mirror.dae
+[1.686s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes/hokuyo.dae
+[1.687s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes/thigh.dae
+[1.697s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes/d435.dae
+[1.738s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes/VLP16_base_2.dae
+[1.739s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//meshes/VLP16_scan.dae
+[1.740s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//sdf
+[1.740s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//sdf/world.sdf
+[1.740s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description//sdf/plugins.xacro
+[1.741s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/ament_index/resource_index/package_run_dependencies/go2_description
+[1.742s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/ament_index/resource_index/parent_prefix_path/go2_description
+[1.742s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description/environment/ament_prefix_path.sh
+[1.743s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description/environment/ament_prefix_path.dsv
+[1.743s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description/environment/path.sh
+[1.743s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description/environment/path.dsv
+[1.743s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description/local_setup.bash
+[1.743s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description/local_setup.sh
+[1.744s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description/local_setup.zsh
+[1.744s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description/local_setup.dsv
+[1.744s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description/package.dsv
+[1.745s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/ament_index/resource_index/packages/go2_description
+[1.745s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description/cmake/go2_descriptionConfig.cmake
+[1.745s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description/cmake/go2_descriptionConfig-version.cmake
+[1.745s] -- Installing: /home/rakesh/go2_ws/install/go2_description/share/go2_description/package.xml
+[1.749s] Invoked command in '/home/rakesh/go2_ws/build/go2_description' returned '0': AMENT_PREFIX_PATH=/home/rakesh/go2_ws/install/realsense2_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rakesh/go2_ws/install/realsense2_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy: DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/rakesh/go2_ws/build/go2_description
